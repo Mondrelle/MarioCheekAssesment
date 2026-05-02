@@ -108,7 +108,7 @@
                                     <segment title="" image="video.fill" catalog="system"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-ej-PDM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-ej-PDM">
                                 <rect key="frame" x="15" y="421" width="360" height="243"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="243" id="oup-iB-kOm"/>
@@ -140,6 +140,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="BMI Calculator" id="jKk-SA-Q7D"/>
+                    <connections>
+                        <outlet property="calculateBMI" destination="6cv-Od-hCz" id="Dfy-gO-gQa"/>
+                        <outlet property="feedbackLabel" destination="7T8-uu-KyZ" id="vZx-Vo-pVz"/>
+                        <outlet property="userHeight" destination="FHF-o7-Xxe" id="ygB-cb-s8P"/>
+                        <outlet property="userWeight" destination="hye-Gt-4uv" id="yt8-Cc-QIs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,25 +174,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BMI Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd6-gb-CHH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd6-gb-CHH">
                                 <rect key="frame" x="16" y="59" width="361" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="3d9-rN-SGq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIL-x0-yk9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WIL-x0-yk9">
                                 <rect key="frame" x="16" y="126" width="361" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="51O-65-8mF"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Popular Videos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-4H-VDn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Videos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-4H-VDn">
                                 <rect key="frame" x="16" y="319" width="361" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Pt4-5c-dAv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-8A-McE">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-8A-McE">
                                 <rect key="frame" x="16" y="348" width="361" height="177"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ly8-27-Syn">
@@ -227,6 +239,21 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZL8-Zt-1sy"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="ZL8-Zt-1sy" firstAttribute="trailing" secondItem="Cd6-gb-CHH" secondAttribute="trailing" constant="16" id="AgG-Ij-ew2"/>
+                            <constraint firstItem="ZL8-Zt-1sy" firstAttribute="trailing" secondItem="Uta-8A-McE" secondAttribute="trailing" constant="16" id="DKy-wP-qEx"/>
+                            <constraint firstItem="Uta-8A-McE" firstAttribute="top" secondItem="UK3-4H-VDn" secondAttribute="bottom" constant="8" symbolic="YES" id="Fdl-dP-OHt"/>
+                            <constraint firstItem="ZL8-Zt-1sy" firstAttribute="bottom" secondItem="Uta-8A-McE" secondAttribute="bottom" constant="258" id="Fzb-Pc-73W"/>
+                            <constraint firstItem="ZL8-Zt-1sy" firstAttribute="trailing" secondItem="UK3-4H-VDn" secondAttribute="trailing" constant="16" id="YMc-5H-IeZ"/>
+                            <constraint firstItem="Cd6-gb-CHH" firstAttribute="top" secondItem="ZL8-Zt-1sy" secondAttribute="top" id="idB-bV-bKO"/>
+                            <constraint firstItem="WIL-x0-yk9" firstAttribute="leading" secondItem="ZL8-Zt-1sy" secondAttribute="leading" constant="16" id="jT1-7r-QOU"/>
+                            <constraint firstItem="UK3-4H-VDn" firstAttribute="leading" secondItem="ZL8-Zt-1sy" secondAttribute="leading" constant="16" id="lRb-bQ-OBh"/>
+                            <constraint firstItem="Uta-8A-McE" firstAttribute="leading" secondItem="ZL8-Zt-1sy" secondAttribute="leading" constant="16" id="qbS-bc-acC"/>
+                            <constraint firstItem="Cd6-gb-CHH" firstAttribute="leading" secondItem="ZL8-Zt-1sy" secondAttribute="leading" constant="16" id="swT-QL-AFf"/>
+                            <constraint firstItem="UK3-4H-VDn" firstAttribute="top" secondItem="WIL-x0-yk9" secondAttribute="bottom" constant="8" symbolic="YES" id="vpl-Lw-vtK"/>
+                            <constraint firstItem="ZL8-Zt-1sy" firstAttribute="trailing" secondItem="WIL-x0-yk9" secondAttribute="trailing" constant="16" id="yGp-Hq-hZ2"/>
+                            <constraint firstItem="WIL-x0-yk9" firstAttribute="top" secondItem="Cd6-gb-CHH" secondAttribute="bottom" constant="8" symbolic="YES" id="ybO-W5-WdL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h1y-Up-p6J"/>
                 </viewController>
